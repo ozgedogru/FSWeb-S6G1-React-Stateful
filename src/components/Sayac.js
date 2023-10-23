@@ -66,7 +66,7 @@ export default function Sayac() {
   const stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "crimson" /* ADIM 2 */,
+    color: sayici % 2 == 0 ? "royalblue" : "crimson" /* ADIM 2 */,
   };
 
   return (
