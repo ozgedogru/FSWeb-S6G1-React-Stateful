@@ -44,6 +44,7 @@ export default function Input() {
     // When the input changes, its whole value can be found inside the event object.
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
+    setInputDegeri(value);
 
     /* ADIM 4 */
   };
@@ -62,7 +63,7 @@ export default function Input() {
     <div className="widget-input container">
       <h2>Input</h2>
       <div id="output" style={stil}>
-        {inputDegeri}
+        {inputDegeri.toUpperCase()}
       </div>{" "}
       {/* ADIM 3 */}
       <div>
