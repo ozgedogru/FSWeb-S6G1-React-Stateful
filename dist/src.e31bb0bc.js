@@ -29073,6 +29073,7 @@ function Input() {
     id: "output",
     style: stil
   }, inputDegeri.toUpperCase()), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+    value: inputDegeri,
     id: "input",
     type: "text",
     onChange: inputuDeğiştir
@@ -29277,7 +29278,7 @@ function Kareler() {
   // kareyi gözlemleyecek. Sayfa yüklendiğinde aktif kare olmayacak,
   // yani  'aktifKare' null olmalı.
 
-  var _useState = (0, _react.useState)([]),
+  var _useState = (0, _react.useState)(KareIdListesi),
     _useState2 = _slicedToArray(_useState, 2),
     kareler = _useState2[0],
     setKareler = _useState2[1];
@@ -29290,8 +29291,8 @@ function Kareler() {
     // Eğer argüman olarak verilen id aktif kare state'indeki id ile eşleşirse, class adı 'active' olan bir string döndürecek
     // diğer durumlar için boş döndürecek.
     // Etkisini görmek için kareye sağ tıklayın ve "öğeyi inceleyin".
-    if (id = setAktifKare) {
-      return "";
+    if (id === aktifKare) {
+      return "active";
     } else {
       return "";
     }
@@ -29300,7 +29301,11 @@ function Kareler() {
     // Bu bir _satır içinden çağırılmış_ click handler yardımcısıdır.
     // id bağımsız değişkenini, stateteki aktif id olacak şekilde ayarlayın
     // eğer zaten aktifse, o zaman önce state i resetlemeliyiz.
-    setAktifKare(id) ? setAktifKare(id) : setAktifKare(null);
+    if (id === aktifKare) {
+      setAktifKare(null);
+    } else {
+      setAktifKare(id);
+    }
   };
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "widget-squares container"
@@ -29310,7 +29315,7 @@ function Kareler() {
   // Kötü bug!  'KareIdListesi' yerine bir state dilimi kullanmalıyız.
   // Şöyle diyebiliriz: "aa bu çalışıyor!" Ama kareler bir state diliminden gelmiyorsa,
   // asla yeni kare ekleyemeyiz, kareleri düzenleyemeyiz ya da silemeyiz. Düzeltin!
-  KareIdListesi.map(function (id) {
+  kareler.map(function (id) {
     return /*#__PURE__*/_react.default.createElement("div", {
       id: id,
       key: id,
@@ -29473,7 +29478,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64201" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
